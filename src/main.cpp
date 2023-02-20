@@ -2,6 +2,15 @@
 #include <iostream>
 #include <cmath>
 
+// Constants 
+
+#define g 9.807
+
+#define FPS 25
+
+
+//-----------------------//
+
 namespace cog
 {
     class Vector3
@@ -163,23 +172,37 @@ namespace cog
     }
 
 
+    using Position = Vector3;
+
+    using Velocity = Vector3;
+
+    using Accleration = Vector3;
+
+    using Force = Vector3;
+
+
+
+
 
 
     class Particle
     {
     public:
 
+        // Default Constructor
+        /*
         Particle() 
-        : p(Vector3()),
+        : p(Position()),
         v(Vector3()),
         a(Vector3()),
         f(Vector3()),
         damp(0.995),
         m(0.00001),
         m_(100000.0) {}
+        */
 
-
-        Particle(Vector3 p_ = Vector3(),
+        // Parameterized Constructor
+        Particle(Position p_ = Position(),
                 Vector3 v_ = Vector3(),
                 Vector3 a_ = Vector3(),
                 Vector3 f_ = Vector3(),
@@ -194,6 +217,7 @@ namespace cog
         m(M),
         m_(M_) {}
 
+        // Copy Constructor
         Particle(const Particle& dust) 
         : p(dust.p),
         v(dust.v),
@@ -203,6 +227,7 @@ namespace cog
         m(dust.m),
         m_(dust.m_) {}
 
+        // Copy Assignment Operator
         Particle& operator=(const Particle& dust)
         {
             p = dust.p;
@@ -268,11 +293,11 @@ namespace cog
 
         void clearAccumulator();
 
-
+        void print();
 
 
     private:
-        Vector3 p; // position in world space
+        Position p; // position in world space
         Vector3 v; // velocity in world space
         Vector3 a; // accleration in world space
         Vector3 f;
@@ -306,10 +331,142 @@ namespace cog
         v *= pow(damp, t);
 
         // Clear the forces
-        clearAccumulator();
+        // clearAccumulator();
     }
 
+    void Particle::setMass(const double mass)
+    {
+        if(mass != 0)
+        {
+            m = mass;
+            m = 1 / m_;
+        }
+    }
 
+    double Particle::getMass() const
+    {
+        return m;
+    }
+
+    void Particle::setInverseMass(const double mass)
+    {
+        if(mass != 0)
+        {
+            m_ = mass;
+            m_ = 1 / m;
+        }
+    }
+
+    double Particle::getInverseMass() const
+    {
+        return m_;
+    }
+
+    bool Particle::hasFiniteMass() const
+    {
+        if(m_ == 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+    
+    void Particle::setDamping(const double newDamp)
+    {
+        damp = newDamp;
+    }
+
+    double Particle::getDamping() const
+    {
+        return damp;
+    }
+
+    void Particle::setPos(const Vector3& v)
+    {
+        p = v;
+    }
+
+    void Particle::setPos(const double x, const double y, const double z)
+    {
+        p = Vector3(x,y,z);
+    }
+
+    void Particle::getPos(Vector3* v) const
+    {
+        v->x = p.x;
+        v->y = p.y;
+        v->z = p.z;
+    }
+
+    Vector3 Particle::getPos() const
+    {
+        return p;
+    }
+
+    //------------------------------
+
+    void Particle::setVelocity(const Vector3& v_)
+    {
+        this->v = v_;
+    }
+
+    void Particle::setVelocity(const double x, const double y, const double z)
+    {
+        v = Vector3(x,y,z);
+    }
+
+    void Particle::getVelocity(Vector3* v) const
+    {
+        v->x = this->v.x;
+        v->y = this->v.y;
+        v->z = this->v.z;
+    }
+
+    Vector3 Particle::getVelocity() const
+    {
+        return v;
+    }
+
+    //-------------------------------------
+
+    void Particle::setAccleration(const Vector3& v)
+    {
+        a = v;
+    }
+
+    void Particle::setAccleration(const double x, const double y, const double z)
+    {
+        a = Vector3(x,y,z);
+    }
+
+    void Particle::getAccleration(Vector3* v) const
+    {
+        v->x = a.x;
+        v->y = a.y;
+        v->z = a.z;
+    }
+
+    Vector3 Particle::getAccleration() const
+    {
+        return a;
+    }
+
+    void Particle::applyForce(const Vector3& v)
+    {
+        f += v;
+    } 
+
+    void Particle::print()
+    {
+        std::cout << " Position = (" << p.x << ", " << p.y << ", " << p.z << "); "
+                << " Velocity = (" << v.x << ", " << v.y << ", " << v.z << "); "
+                << " Accleration = (" << a.x << ", " << a.y << ", " << a.z << ")" << std::endl;
+    }
+
+    /* 
+    void Particle::clearAccumulator();
+    */
 
 }
 
@@ -317,11 +474,25 @@ namespace cog
 
 int main()
 {
-    cog::Vector3 a(1,2,3), b(7,8,9);
+    cog::Position pos(0,0,0);
 
-    a += b;
+    cog::Velocity vel(1,1,0);
 
-    return 0;
+    cog::Accleration acc(0,-1,0);
+
+    acc *= g;
+
+    cog::Particle sample;
+
+    sample.setPos(pos);
+    sample.setVelocity(vel);
+    sample.setAccleration(acc);
+
+    for(int i = 0; i < 25; i++)
+    {
+        sample.integrate(i);
+        sample.print();
+    }
 }
 
 
