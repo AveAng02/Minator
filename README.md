@@ -1,2 +1,2 @@
-# Jaggrey
+# Cog
 A physics engine.
