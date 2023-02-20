@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 
-namespace jaggery
+namespace cog
 {
     class Vector3
     {
@@ -27,7 +27,7 @@ namespace jaggery
         Vector3(const Vector3& v) : x(v.x), y(v.y), z(v.z) {}
 
         // Copy assignment operator
-        Vector3& operator=(const Vector3& v)
+        Vector3& operator=(const Vector3& v) 
         {
             x = v.x;
             y = v.y;
@@ -146,11 +146,7 @@ namespace jaggery
     {
         return Vector3((v.x * u.x), (v.y * u.y), (v.z * u.z));
     }
-
-    Vector3 a(1,2,3), b(7,8,9);
-
-    a += b;
-
+    
 }
 
 
