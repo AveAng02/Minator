@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <fstream>
 #include <cmath>
 
 // Constants 
@@ -295,8 +296,6 @@ namespace cog
 
         void print();
 
-
-    private:
         Position p; // position in world space
         Vector3 v; // velocity in world space
         Vector3 a; // accleration in world space
@@ -473,6 +472,10 @@ namespace cog
 
 int main()
 {
+    std::ofstream MyFile("engineData.txt");
+
+    
+
     cog::Position pos(0,0,0);
 
     cog::Velocity vel(1,1,0);
@@ -493,7 +496,12 @@ int main()
     {
         sample.integrate(1.0/FPS);
         sample.print();
+        MyFile << sample.p.x << "," << sample.p.y << "," << sample.p.z << "," 
+                << sample.v.x << "," << sample.v.y << "," << sample.v.z << "," 
+                << sample.a.x << "," << sample.a.y << "," << sample.a.z << "\n";
     }
+
+    MyFile.close();
 }
 
 
