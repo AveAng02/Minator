@@ -315,23 +315,22 @@ namespace cog
         
         // Make sure duration is greater than zero
         if(t > 0.0)
-            return;
+        {
+            // Calculate position
+            p += t * v;
 
+            // Calculate accleration
+            a += t * f;
 
-        // Calculate position
-        p += t * v;
+            // Calculate velocity
+            v += t * a;
 
-        // Calculate accleration
-        a += t * f;
+            // Include Drag
+            // v *= pow(damp, t);
 
-        // Calculate velocity
-        v += t * a;
-
-        // Include Drag
-        v *= pow(damp, t);
-
-        // Clear the forces
-        // clearAccumulator();
+            // Clear the forces
+            // clearAccumulator();
+        }
     }
 
     void Particle::setMass(const double mass)
@@ -478,6 +477,8 @@ int main()
 
     cog::Velocity vel(1,1,0);
 
+    vel *= 4;
+
     cog::Accleration acc(0,-1,0);
 
     acc *= g;
@@ -490,7 +491,7 @@ int main()
 
     for(int i = 0; i < 25; i++)
     {
-        sample.integrate(i);
+        sample.integrate(1.0/FPS);
         sample.print();
     }
 }
