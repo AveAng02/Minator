@@ -1,13 +1,8 @@
-*.db
-*.ipch
-build
-.cache
+raylib-master
+_build
+_bin
 .vs
-x64
-.vscode
-
-x64/
-
-# Visual Studio 2015/2017 cache/options directory
-.vs/
-
+/bin
+/build
+Makefile
+obj
