@@ -1,7 +1,7 @@
 
 #include "raylib.h"
 
-#include "include/Body.h"
+#include "Core/Body.h"
 
 namespace Minator
 {
@@ -11,12 +11,12 @@ namespace Minator
 		y += (vy * time);
 	}
 
-	void Body::addForce(float xComponent, float yComponent, std::string lable)
+	void Body::addForce(float xComponent, float yComponent, const std::string& lable)
 	{
 
 	}
 
-	void Body::addImpulse(float xComponent, float yComponent, std::string lable)
+	void Body::addImpulse(float xComponent, float yComponent, const std::string& lable)
 	{
 
 	}
@@ -25,6 +25,6 @@ namespace Minator
 	{
 		// for now consider all bodies as sphere
 		// TODO: Write a wrapper class for raylib
-		DrawCircle(x, y, radius, MAROON);
+		DrawCircle(x, y, radius, bodyColor);
 	}
 }

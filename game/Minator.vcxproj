@@ -270,13 +270,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Body.h" />
-    <ClInclude Include="include\Scene.h" />
+    <ClInclude Include="Core\Body.h" />
+    <ClInclude Include="Core\Scene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Body.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="Core\Body.cpp" />
+    <ClCompile Include="Core\main.cpp" />
+    <ClCompile Include="Core\Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
