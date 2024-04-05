@@ -265,18 +265,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\raylib-master\raylib.vcxproj">
-      <Project>{8898EA18-743A-15EF-5DF5-284349369C3F}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Core\Body.h" />
     <ClInclude Include="Core\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Body.cpp" />
-    <ClCompile Include="Core\main.cpp" />
     <ClCompile Include="Core\Scene.cpp" />
+    <ClCompile Include="Core\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\raylib-master\raylib.vcxproj">
+      <Project>{8898EA18-743A-15EF-5DF5-284349369C3F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

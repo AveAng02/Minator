@@ -29,6 +29,7 @@ namespace Minator
 
 	void Scene::updateCollisions()
 	{
+		// TODO : Create a event system that abstracts away this collision detection and response
 		// Update according to walls
 		for (const auto& body : bodyList)
 		{

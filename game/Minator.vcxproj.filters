@@ -4,27 +4,33 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{21EB8090-0D4E-1035-B6D3-48EBA215DCB7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{192C3F5D-8542-3DF3-CEB9-C8143A0F0E7B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{E9C7FDCE-D52A-8D73-7EB0-C5296AF258F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{E145AD0A-4D5C-ABA0-96D3-36C202297C28}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Body.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Core\Scene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Body.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\Scene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Main.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
