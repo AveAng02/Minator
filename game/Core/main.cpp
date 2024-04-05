@@ -5,6 +5,7 @@
 
 #include "raylib.h"
 
+#include "Core/AABB.h"
 #include "Core/Body.h"
 #include "Core/Scene.h"
 
@@ -30,26 +31,26 @@ int main(void)
 
     std::random_device dev;
     std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> dist(0, 241);
+    std::uniform_int_distribution<std::mt19937::result_type> dist(0, 501);
 
     Minator::Scene newScene(screenWidth, screenHeight);
 
     /*
     * Scene with 1590 bodies set up 
     */
-    /*
+    
     std::vector<Minator::Body> bodyList;
 
     int spaceQuantum = 50;
-    int xpos = spaceQuantum, ypos = spaceQuantum, c = 0, velx = 0, vely = 0;
+    int xpos = 100, ypos = 100, c = 0, velx = 0, vely = 0;
     int xcount = screenWidth / xpos, ycount = screenHeight / ypos;
 
     for (int i = 0; i < xcount; i++)
     {
         for (int j = 0; j < ycount; j++)
         {
-            velx = dist(rng) - 120;
-            vely = dist(rng) - 120;
+            velx = dist(rng) - 250;
+            vely = dist(rng) - 250;
 
             switch (c)
             {
@@ -84,13 +85,15 @@ int main(void)
     
     for (const auto& i : bodyList)
         newScene.addBody(std::make_shared<Minator::Body>(i));
-    */
+    
     //======================================================================//
 
     // Simulating Tunnelling
+    /*
     Minator::Body b1(GREEN, (float)screenWidth * 0.25f, (float)screenHeight * 0.25f, 50.0f, 10.0f, screenWidth * 2, screenHeight * 2, 0.5f);
 
     newScene.addBody(std::make_shared<Minator::Body>(b1));
+    */
     //=====================================================================//
 
 

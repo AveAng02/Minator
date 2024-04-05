@@ -108,13 +108,13 @@ namespace Minator
 		{
 			for (j = i + 1; j < len; j++)
 			{
-				dist1 = bodyList[i]->radius + bodyList[j]->radius;
-				dist1 = (dist1 * dist1) + 3.0f;
-				dx = (bodyList[i]->x - bodyList[j]->x) * (bodyList[i]->x - bodyList[j]->x);
-				dy = (bodyList[i]->y - bodyList[j]->y) * (bodyList[i]->y - bodyList[j]->y);
-				dist2 = dx + dy;
+				// dist1 = bodyList[i]->radius + bodyList[j]->radius;
+				// dist1 = (dist1 * dist1) + 3.0f;
+				// dx = (bodyList[i]->x - bodyList[j]->x) * (bodyList[i]->x - bodyList[j]->x);
+				// dy = (bodyList[i]->y - bodyList[j]->y) * (bodyList[i]->y - bodyList[j]->y);
+				// dist2 = dx + dy;
 
-				if (dist2 < dist1)
+				if (bodyList[i]->box.overlaps(bodyList[j]->box))
 				{
 					hasCollided = true;
 

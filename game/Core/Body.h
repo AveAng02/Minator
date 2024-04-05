@@ -5,6 +5,8 @@
 
 #include "raylib.h"
 
+#include "Core/AABB.h"
+
 namespace Minator
 {
 	// TODO: Make a virtual class and define a rigid body and soft body
@@ -31,7 +33,19 @@ namespace Minator
 			hasCollided(false),
 			hasInfiniteMass(false),
 			hasGravity(false)
-		{}
+		{
+			Vector3 vecx, vecy;
+
+			vecx.x = x_ - radius_;
+			vecx.y = y_ - radius_;
+			vecx.z = 0.0f;
+
+			vecy.x = x_ + radius_;
+			vecy.y = y_ + radius_;
+			vecy.z = 0.0f;
+
+			box = AABB(vecx, vecy);
+		}
 
 						// Define a seperate class named time
 		void updatePosition(float time);
@@ -82,5 +96,7 @@ namespace Minator
 		int flag; 
 
 		int collideID; // TODO: better design needed
+
+		AABB box;
 	};
 }
