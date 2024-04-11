@@ -24,6 +24,9 @@
     <ClInclude Include="Core\AABB.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\QuadTree.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Body.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\AABB.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\QuadTree.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>

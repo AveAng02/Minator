@@ -267,11 +267,13 @@
   <ItemGroup>
     <ClInclude Include="Core\Body.h" />
     <ClInclude Include="Core\AABB.h" />
+    <ClInclude Include="Core\QuadTree.h" />
     <ClInclude Include="Core\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Body.cpp" />
     <ClCompile Include="Core\AABB.cpp" />
+    <ClCompile Include="Core\QuadTree.cpp" />
     <ClCompile Include="Core\Scene.cpp" />
     <ClCompile Include="Core\Main.cpp" />
   </ItemGroup>
