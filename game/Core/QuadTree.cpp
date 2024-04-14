@@ -7,12 +7,8 @@ namespace Minator
 	// Inserting new node
 	int QuadTree::insert(Body body)
 	{
-		return 0;
-	}
 
-	// building the tree for the first time
-	int QuadTree::buildTree()
-	{
+
 		return 0;
 	}
 
@@ -22,4 +18,9 @@ namespace Minator
 		return 0;
 	}
 	
+	int QuadTree::getClosest(Body body)
+	{
+		return 0;
+	}
+
 }

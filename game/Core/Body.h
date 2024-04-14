@@ -6,6 +6,7 @@
 #include "raylib.h"
 
 #include "Core/AABB.h"
+#include "Core/Vector.h"
 
 namespace Minator
 {
@@ -13,74 +14,46 @@ namespace Minator
 	class Body
 	{
 	public:
+
 		Body(Color bodyColor_ = MAROON,
-			float x_ = 0.0f,
-			float y_ = 0.0f,
+			point2D pos = point2D(),
 			float mass_ = 0.0f,
-			float radius_ = 0.0f,
-			float vx_ = 0.0f,
-			float vy_ = 0.0f,
+			velocity2D vel = velocity2D(),
 			float sigma_ = 0.0f)
 			: bodyColor(bodyColor_),
-			x(x_),
-			y(y_),
+			bodyCentrePos(pos),
 			mass(mass_),
-			radius(radius_),
-			vx(vx_),
-			vy(vy_),
+			bodyVel(vel),
 			sigma(sigma_),
 			flag(0),
 			hasCollided(false),
 			hasInfiniteMass(false),
 			hasGravity(false)
 		{
-			Vector3 vecx, vecy;
-
-			vecx.x = x_ - radius_;
-			vecx.y = y_ - radius_;
-			vecx.z = 0.0f;
-
-			vecy.x = x_ + radius_;
-			vecy.y = y_ + radius_;
-			vecy.z = 0.0f;
-
-			box = AABB(vecx, vecy);
+			bbox = AABB(point2D(0.0f, 0.0f), point2D(1.0f, 1.0f));
 		}
 
 						// Define a seperate class named time
 		void updatePosition(float time);
 
-		void addForce(float xComponent, float yComponent, const std::string& lable);
+		void addForce(force2D force, point2D poc);
 
-		void addImpulse(float xComponent, float yComponent, const std::string& lable);
+		void addImpulse(impulse2D impulse, point2D poc);
 
 		void drawBody();
 
-		// force list
-		// TODO : Replace with force class
-		std::vector<float> forceX;
-		std::vector<float> forceY;
-		std::vector<std::string> forceLable;
-
-		// impulse list
-		// TODO : Replace with impulse class
-		std::vector<float> impulseX;
-		std::vector<float> impulseY;
-		std::vector<std::string> impulseLable;
 
 		// TODO : define a class named velocity
 		// Defined in meters per second
 		// converted to pixels per frame
 		std::string bodyName;
+
 		Color bodyColor;
 
-		float vx;
-		float vy;
+		velocity2D bodyVel;
 
-
-		float x;
-		float y;
-		float radius; // TODO: for now consider all bodies as sphere. Needs to be virtualized
+		point2D bodyCentrePos;
+		
 		float mass;
 		float sigma; // coefficient of restitution
 
@@ -95,8 +68,6 @@ namespace Minator
 		*/
 		int flag; 
 
-		int collideID; // TODO: better design needed
-
-		AABB box;
+		AABB bbox;
 	};
 }

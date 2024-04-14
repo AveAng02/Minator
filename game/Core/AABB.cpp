@@ -10,11 +10,11 @@ namespace Minator
 {
 	bool AABB::overlaps(AABB sentBox)
 	{
-		bool retValX = (box.min.x > sentBox.box.min.x && box.min.x < sentBox.box.max.x)
-						|| (box.max.x > sentBox.box.min.x && box.max.x < sentBox.box.max.x);
+		bool retValX = (min.x > sentBox.min.x && min.x < sentBox.max.x)
+						|| (max.x > sentBox.min.x && max.x < sentBox.max.x);
 
-		bool retValY = (box.min.y > sentBox.box.min.y && box.min.y < sentBox.box.max.y)
-						|| (box.max.y > sentBox.box.min.y && box.max.y < sentBox.box.max.y);
+		bool retValY = (min.y > sentBox.min.y && min.y < sentBox.max.y)
+						|| (max.y > sentBox.min.y && max.y < sentBox.max.y);
 
 		if (retValX && retValY)
 			std::cout << "Overlaps" << std::endl;
@@ -24,6 +24,16 @@ namespace Minator
 
 	void AABB::drawBox()
 	{
+		BoundingBox box;
+
+		box.min.x = min.x;
+		box.min.y = min.y;
+		box.min.z = 0.0f;
+
+		box.max.x = max.x;
+		box.max.y = max.y;
+		box.max.z = 0.0f;
+
 		DrawBoundingBox(box, RED);
 	}
 }
