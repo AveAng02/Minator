@@ -5,8 +5,12 @@
 
 #include "raylib.h"
 
+#include "Core/Vector.h"
 #include "Core/AABB.h"
 #include "Core/Body.h"
+#include "Body/Circle.h"
+#include "Body/Square.h"
+#include "Body/Triangle.h"
 #include "Core/Scene.h"
 
 #define FPS 60
@@ -42,45 +46,48 @@ int main(void)
     std::vector<Minator::Body> bodyList;
 
     int spaceQuantum = 50;
-    int xpos = 100, ypos = 100, c = 0, velx = 0, vely = 0;
-    int xcount = screenWidth / xpos, ycount = screenHeight / ypos;
+    int c = 0;
+    int xcount = screenWidth / 100, ycount = screenHeight / 100;
+
+    Minator::point2D center(100, 100);
+    Minator::velocity2D velo;
 
     for (int i = 0; i < xcount; i++)
     {
         for (int j = 0; j < ycount; j++)
         {
-            velx = dist(rng) - 250;
-            vely = dist(rng) - 250;
+            velo.x = dist(rng) - 250;
+            velo.y = dist(rng) - 250;
 
             switch (c)
             {
             case 0:
-                bodyList.push_back(Minator::Body(RED, xpos, ypos, 50.0f, 15.0f, velx, vely, 0.5f));
+                bodyList.push_back(Minator::Body(RED, center, 50.0f, velo, 0.5f));
                 break;
 
             case 1:
-                bodyList.push_back(Minator::Body(GREEN, xpos, ypos, 50.0f, 15.0f, velx, vely, 0.5f));
+                bodyList.push_back(Minator::Body(GREEN, center, 50.0f, velo, 0.5f));
                 break;
 
             case 2:
-                bodyList.push_back(Minator::Body(BLUE, xpos, ypos, 50.0f, 15.0f, velx, vely, 0.5f));
+                bodyList.push_back(Minator::Body(BLUE, center, 50.0f, velo, 0.5f));
                 break;
 
             case 3:
-                bodyList.push_back(Minator::Body(YELLOW, xpos, ypos, 50.0f, 15.0f, velx, vely, 0.5f));
+                bodyList.push_back(Minator::Body(YELLOW, center, 50.0f, velo, 0.5f));
                 break;
 
             default:
                 break;
             }
 
-            ypos += spaceQuantum;
+            center.y += spaceQuantum;
             c++;
             c %= 4;
         }
 
-        xpos += spaceQuantum;
-        ypos = spaceQuantum;
+        center.x += spaceQuantum;
+        center.y = spaceQuantum;
     }
     
     for (const auto& i : bodyList)
@@ -105,9 +112,6 @@ int main(void)
     while (!WindowShouldClose())
     {
         newScene.updateScene(timeQuantum);
-
-        if (newScene.detectCollisions())
-            newScene.updateCollisions();
         
         BeginDrawing();
 

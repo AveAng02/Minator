@@ -27,6 +27,7 @@ namespace Minator
 			i->drawBody();
 	}
 
+	/*
 	void Scene::updateCollisions()
 	{
 		// TODO : Create a event system that abstracts away this collision detection and response
@@ -36,34 +37,12 @@ namespace Minator
 			if (body->hasCollided)
 			{
 				if (body->flag == -1)
-					body->vx *= -1;
+					body->bodyVel.x *= -1;
 				else if (body->flag == -2)
-					body->vy *= -1;
+					body->bodyVel.y *= -1;
 				else if (body->flag == -3)
 				{
-					// loading variables
-					// float m1 = bodyList[body->collideID]->mass;
-					float ux1 = bodyList[body->collideID]->vx;
-					float uy1 = bodyList[body->collideID]->vy;
-
-					// float m2 = body->mass;
-					float ux2 = body->vx;
-					float uy2 = body->vy;
-
-					// calculating ratios
-					// float r1 = (m1 - m2) / (m1 + m2);
-					// float r2 = 2 * m1 / (m1 - m2);
-					// float r3 = 2 * m2 / (m1 + m2);
-
-					// calculating final values
-					bodyList[body->collideID]->vx = ux2;
-					body->vx = ux1;
-
-					bodyList[body->collideID]->vy = uy2;
-					body->vy = uy1;
-
-					bodyList[body->collideID]->hasCollided = false;
-					bodyList[body->collideID]->flag = 0;
+					
 				}
 			}
 
@@ -131,5 +110,6 @@ namespace Minator
 
 		return hasCollided;
 	}
+	*/
 }
 

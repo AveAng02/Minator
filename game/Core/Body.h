@@ -16,31 +16,29 @@ namespace Minator
 	public:
 
 		Body(Color bodyColor_ = MAROON,
-			point2D pos = point2D(),
 			float mass_ = 0.0f,
 			velocity2D vel = velocity2D(),
 			float sigma_ = 0.0f)
 			: bodyColor(bodyColor_),
-			bodyCentrePos(pos),
 			mass(mass_),
-			bodyVel(vel),
+			velocity(vel),
 			sigma(sigma_),
 			flag(0),
 			hasCollided(false),
 			hasInfiniteMass(false),
 			hasGravity(false)
 		{
-			bbox = AABB(point2D(0.0f, 0.0f), point2D(1.0f, 1.0f));
+			bbox = AABB(point3D(0.0f, 0.0f, 0.0f), point3D(1.0f, 1.0f, 0.0f));
 		}
 
 						// Define a seperate class named time
-		void updatePosition(float time);
+		virtual void updatePosition(float time) = 0;
 
-		void addForce(force2D force, point2D poc);
+		virtual void addForce(force2D force, point2D poc) = 0;
 
-		void addImpulse(impulse2D impulse, point2D poc);
+		virtual void addImpulse(impulse2D impulse, point2D poc) = 0;
 
-		void drawBody();
+		virtual void drawBody() = 0;
 
 
 		// TODO : define a class named velocity
@@ -50,9 +48,7 @@ namespace Minator
 
 		Color bodyColor;
 
-		velocity2D bodyVel;
-
-		point2D bodyCentrePos;
+		velocity2D velocity;
 		
 		float mass;
 		float sigma; // coefficient of restitution

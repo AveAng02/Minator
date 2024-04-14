@@ -24,10 +24,6 @@ namespace Minator
 
 		void drawScene() const;
 
-		void updateCollisions();
-
-		bool detectCollisions() const;
-
 		std::vector<std::shared_ptr<Body>> bodyList; // IMP: convert to pointer of vector of bodies
 
 		// TODO: This part needs a better design

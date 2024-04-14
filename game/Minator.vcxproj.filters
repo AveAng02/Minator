@@ -16,6 +16,12 @@
     <Filter Include="Source Files\Main">
       <UniqueIdentifier>{e739bf83-6601-4b2e-a227-699459118f6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Body">
+      <UniqueIdentifier>{e53b9a6d-7193-4273-99e8-79002afe8bde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Body">
+      <UniqueIdentifier>{61bad5b4-c656-4578-84cf-c861b5a11e35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Body.h">
@@ -27,13 +33,25 @@
     <ClInclude Include="Core\AABB.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\QuadTree.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Minator.h">
+    <ClInclude Include="Core\MinatorAPI.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Core\Vector.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Body\Circle.h">
+      <Filter>Header Files\Body</Filter>
+    </ClInclude>
+    <ClInclude Include="Body\Square.h">
+      <Filter>Header Files\Body</Filter>
+    </ClInclude>
+    <ClInclude Include="Body\Triangle.h">
+      <Filter>Header Files\Body</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CollisionBP.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CollisionNP.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,16 +65,28 @@
     <ClCompile Include="Core\AABB.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Core\QuadTree.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Main</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Minator.cpp">
+    <ClCompile Include="Core\MinatorAPI.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\Vector.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Body\Circle.cpp">
+      <Filter>Source Files\Body</Filter>
+    </ClCompile>
+    <ClCompile Include="Body\Square.cpp">
+      <Filter>Source Files\Body</Filter>
+    </ClCompile>
+    <ClCompile Include="Body\Triangle.cpp">
+      <Filter>Source Files\Body</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CollisionBP.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CollisionNP.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>

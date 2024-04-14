@@ -265,18 +265,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Body\Circle.h" />
+    <ClInclude Include="Body\Square.h" />
+    <ClInclude Include="Body\Triangle.h" />
     <ClInclude Include="Core\Body.h" />
     <ClInclude Include="Core\AABB.h" />
-    <ClInclude Include="Core\Minator.h" />
-    <ClInclude Include="Core\QuadTree.h" />
+    <ClInclude Include="Core\CollisionBP.h" />
+    <ClInclude Include="Core\CollisionNP.h" />
+    <ClInclude Include="Core\MinatorAPI.h" />
     <ClInclude Include="Core\Scene.h" />
     <ClInclude Include="Core\Vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Body\Circle.cpp" />
+    <ClCompile Include="Body\Square.cpp" />
+    <ClCompile Include="Body\Triangle.cpp" />
     <ClCompile Include="Core\Body.cpp" />
     <ClCompile Include="Core\AABB.cpp" />
-    <ClCompile Include="Core\Minator.cpp" />
-    <ClCompile Include="Core\QuadTree.cpp" />
+    <ClCompile Include="Core\CollisionBP.cpp" />
+    <ClCompile Include="Core\CollisionNP.cpp" />
+    <ClCompile Include="Core\MinatorAPI.cpp" />
     <ClCompile Include="Core\Scene.cpp" />
     <ClCompile Include="Core\Vector.cpp" />
     <ClCompile Include="Main.cpp" />
