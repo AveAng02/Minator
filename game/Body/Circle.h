@@ -15,10 +15,10 @@ namespace Minator
 			float sigma_ = 0.0f,
 			point2D pos = point2D(),
 			float radius_ = 0.0f)
-			: radius(radius_)
+			: radius(radius_),
+			center(pos)
 		{
 			bodyColor = bodyColor_;
-			center = pos;
 			mass = mass_;
 			velocity = vel;
 			sigma = sigma_;
@@ -27,8 +27,15 @@ namespace Minator
 			hasGravity = false;
 			hasInfiniteMass = false;
 
-			bbox = AABB(point3D(0.0f, 0.0f, 0.0f), point3D(1.0f, 1.0f, 0.0f));
+			bbox = AABB(point3D(pos.x - radius_, pos.y - radius_, 0.0f), 
+				point3D(pos.x + radius_, pos.y + radius_, 1.0f));
 		}
+
+		void updatePosition(float time) const override;
+
+		void addVelocity(velocity2D velocity, point2D poc) const override;
+
+		void addForce(force2D force, point2D poc) const override;
 
 		float radius;
 		point2D center;

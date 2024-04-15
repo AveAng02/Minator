@@ -22,7 +22,7 @@ namespace Minator
 
 		void addBody(const std::shared_ptr<Body> bodyPtr);
 
-		void drawScene() const;
+		// void drawScene() const;
 
 		std::vector<std::shared_ptr<Body>> bodyList; // IMP: convert to pointer of vector of bodies
 

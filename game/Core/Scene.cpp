@@ -18,6 +18,7 @@ namespace Minator
 		bodyList.push_back(bodyPtr);
 	}
 
+	/*
 	void Scene::drawScene() const
 	{
 		ClearBackground(RAYWHITE);
@@ -27,7 +28,6 @@ namespace Minator
 			i->drawBody();
 	}
 
-	/*
 	void Scene::updateCollisions()
 	{
 		// TODO : Create a event system that abstracts away this collision detection and response

@@ -14,58 +14,61 @@ namespace Minator
 
 
 		float dot(const vector2D vec) const;
+		float mag() const;
+		float magSquared() const;
+		vector2D normalize() const;
 
-		void operator=(const vector2D& vec)
+		vector2D& operator=(vector2D vec)
 		{
 			x = vec.x;
 			y = vec.y;
 		}
 
-		vector2D operator+(const vector2D& vec)
+		vector2D& operator+(const vector2D& vec)
 		{
 			return vector2D(x + vec.x, y + vec.y);
 		}
 
-		vector2D operator-(const vector2D& vec)
+		vector2D& operator-(const vector2D& vec)
 		{
 			return vector2D(x - vec.x, y - vec.y);
 		}
 
-		void operator+=(const vector2D& vec)
+		vector2D& operator+=(const vector2D& vec)
 		{
 			x += vec.x; 
 			y += vec.y;
+			return *this;
 		}
 
-		void operator-=(const vector2D& vec)
+		vector2D& operator-=(const vector2D& vec)
 		{
 			x -= vec.x;
 			y -= vec.y;
+			return *this;
 		}
 
-		vector2D operator*(const float value)
+		vector2D& operator*(float value)
 		{
 			return vector2D(x * value, y * value);
 		}
 
-		vector2D operator/(const float value)
+		vector2D& operator/(float value)
 		{
 			return vector2D(x / value, y / value);
 		}
 
-		void operator*=(const float value)
+		vector2D& operator*=(float value)
 		{
 			x *= value;
 			y *= value;
 		}
 
-		void operator/=(const float value)
+		vector2D& operator/=(float value)
 		{
 			x /= value;
 			y /= value;
 		}
-
-
 
 		float x, y;
 
@@ -89,59 +92,58 @@ namespace Minator
 			: x(x_), y(y_), z(z_)
 		{}
 
+		vector3D(point2D point)
+			: x(point.x), y(point.y), z(0.0f)
+		{}
+
 
 		float dot(const vector3D vec) const;
 		vector3D cross(const vector3D vec) const;
+		float mag() const;
+		float magSquared() const;
+		vector3D normalize() const;
 
-		void operator=(const vector3D& vec)
+		vector3D& operator=(const vector3D& vec)
 		{
 			x = vec.x;
 			y = vec.y;
 			z = vec.z;
+			return *this;
 		}
 
-		vector3D operator+(const vector3D& vec)
-		{
-			return vector3D(x + vec.x, y + vec.y, z + vec.z);
-		}
-
-		vector3D operator-(const vector3D& vec)
-		{
-			return vector3D(x - vec.x, y - vec.y, z - vec.z);
-		}
-
-		void operator+=(const vector3D& vec)
+		vector3D& operator+=(const vector3D& vec)
 		{
 			x += vec.x;
 			y += vec.y;
 			z += vec.z;
+			return *this;
 		}
 
-		void operator-=(const vector3D& vec)
+		vector3D& operator-=(const vector3D& vec)
 		{
 			x -= vec.x;
 			y -= vec.y;
 			z -= vec.z;
 		}
 
-		vector3D operator*(const float value)
+		vector3D& operator*(float value)
 		{
 			return vector3D(x * value, y * value, z * value);
 		}
 
-		vector3D operator/(const float value)
+		vector3D& operator/(float value)
 		{
 			return vector3D(x / value, y / value, z / value);
 		}
 
-		void operator*=(const float value)
+		vector3D& operator*=(float value)
 		{
 			x *= value;
 			y *= value;
 			z *= value;
 		}
 
-		void operator/=(const float value)
+		vector3D& operator/=(float value)
 		{
 			x /= value;
 			y /= value;

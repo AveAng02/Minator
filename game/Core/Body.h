@@ -32,13 +32,13 @@ namespace Minator
 		}
 
 						// Define a seperate class named time
-		virtual void updatePosition(float time) = 0;
+		virtual void updatePosition(float time) const = 0;
 
-		virtual void addForce(force2D force, point2D poc) = 0;
+		virtual void addVelocity(velocity2D velocity, point2D poc) const = 0;
 
-		virtual void addImpulse(impulse2D impulse, point2D poc) = 0;
+		virtual void addForce(force2D force, point2D poc) const = 0;
 
-		virtual void drawBody() = 0;
+		// virtual void drawBody() const = 0;
 
 
 		// TODO : define a class named velocity
@@ -49,6 +49,7 @@ namespace Minator
 		Color bodyColor;
 
 		velocity2D velocity;
+		force2D force;
 		
 		float mass;
 		float sigma; // coefficient of restitution
