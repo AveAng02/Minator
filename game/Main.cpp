@@ -59,6 +59,8 @@ int main(void)
             velo.x = dist(rng) - 250;
             velo.y = dist(rng) - 250;
 
+
+
             switch (c)
             {
             case 0:
@@ -66,11 +68,11 @@ int main(void)
                 break;
 
             case 1:
-                bodyList.push_back(Minator::Square(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(Minator::Circle(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 2:
-                bodyList.push_back(Minator::Triangle(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(Minator::Circle(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 3:
@@ -115,7 +117,6 @@ int main(void)
         
         BeginDrawing();
 
-        newScene.drawScene();
 
         EndDrawing();
     }

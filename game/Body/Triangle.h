@@ -30,11 +30,11 @@ namespace Minator
 			a += c;
 		}
 
-		void updatePosition(float time) const override;
+		void updatePosition(float time) override;
 
-		void addVelocity(velocity2D velocity, point2D poc) const override;
+		void addVelocity(velocity2D velocity, point2D poc) override;
 
-		void addForce(force2D force, point2D poc) const override;
+		void addForce(force2D force, point2D poc) override;
 
 		point2D a, b, c;
 	};

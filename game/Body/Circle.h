@@ -31,11 +31,11 @@ namespace Minator
 				point3D(pos.x + radius_, pos.y + radius_, 1.0f));
 		}
 
-		void updatePosition(float time) const override;
+		virtual void updatePosition(float time) override;
 
-		void addVelocity(velocity2D velocity, point2D poc) const override;
+		virtual void addVelocity(velocity2D velocity, point2D poc) override;
 
-		void addForce(force2D force, point2D poc) const override;
+		virtual void addForce(force2D force, point2D poc) override;
 
 		float radius;
 		point2D center;

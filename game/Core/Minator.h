@@ -4,11 +4,11 @@
 
 namespace Minator
 {
-	class MinatorAPI
+	class Minator
 	{
 	public:
 
-		MinatorAPI()
+		Minator()
 		{
 
 		}

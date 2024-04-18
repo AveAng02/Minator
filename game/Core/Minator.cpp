@@ -1,5 +1,5 @@
 
-#include "MinatorAPI.h"
+#include "Minator.h"
 
 namespace Minator
 {

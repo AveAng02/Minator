@@ -16,7 +16,7 @@ namespace Minator
 		float dot(const vector2D vec) const;
 		float mag() const;
 		float magSquared() const;
-		vector2D normalize() const;
+		vector2D normalize();
 
 		vector2D& operator=(vector2D vec)
 		{
@@ -101,7 +101,7 @@ namespace Minator
 		vector3D cross(const vector3D vec) const;
 		float mag() const;
 		float magSquared() const;
-		vector3D normalize() const;
+		vector3D normalize();
 
 		vector3D& operator=(const vector3D& vec)
 		{

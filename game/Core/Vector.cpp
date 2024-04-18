@@ -20,7 +20,7 @@ namespace Minator
 		return x * x + y * y;
 	}
 
-	vector2D vector2D::normalize() const
+	vector2D vector2D::normalize() 
 	{
 		return (*this) / this->mag();
 	}
@@ -53,6 +53,11 @@ namespace Minator
 	float vector3D::magSquared() const
 	{
 		return x * x + y * y + z * z;
+	}
+
+	vector3D vector3D::normalize()
+	{
+		return (*this) / this->mag();
 	}
 }
 
