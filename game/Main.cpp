@@ -43,7 +43,7 @@ int main(void)
     * Scene with 1590 bodies set up 
     */
     
-    std::vector<Minator::Body> bodyList;
+    std::vector<std::shared_ptr<Minator::Body>> bodyList;
 
     int spaceQuantum = 50;
     int c = 0;
@@ -64,19 +64,19 @@ int main(void)
             switch (c)
             {
             case 0:
-                bodyList.push_back(Minator::Circle(RED, 50.0f, velo, 50.0f, center, 15.0f));
+                bodyList.push_back(std::make_shared<Minator::Circle>(RED, 50.0f, velo, 50.0f, center, 15.0f));
                 break;
 
             case 1:
-                bodyList.push_back(Minator::Circle(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(std::make_shared<Minator::Square>(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 2:
-                bodyList.push_back(Minator::Circle(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(std::make_shared<Minator::Triangle>(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 3:
-                bodyList.push_back(Minator::Circle(YELLOW, 50.0f, velo, 50.0f, center, 15.0f));
+                bodyList.push_back(std::make_shared<Minator::Circle>(YELLOW, 50.0f, velo, 50.0f, center, 15.0f));
                 break;
 
             default:
@@ -92,8 +92,7 @@ int main(void)
         center.y = spaceQuantum;
     }
     
-    for (const auto& i : bodyList)
-        newScene.addBody(std::make_shared<Minator::Body>(i));
+    newScene.bodyList = bodyList;
     
     //======================================================================//
 

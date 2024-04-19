@@ -33,7 +33,7 @@
     <ClInclude Include="Core\AABB.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\MinatorAPI.h">
+    <ClInclude Include="Core\Minator.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Core\Vector.h">
@@ -68,7 +68,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Main</Filter>
     </ClCompile>
-    <ClCompile Include="Core\MinatorAPI.cpp">
+    <ClCompile Include="Core\Minator.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\Vector.cpp">

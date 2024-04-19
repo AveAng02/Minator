@@ -22,6 +22,7 @@ namespace Minator
 		{
 			x = vec.x;
 			y = vec.y;
+			return *this;
 		}
 
 		vector2D& operator+(const vector2D& vec)

@@ -10,20 +10,22 @@ namespace Minator
 {
 	struct BPCU
 	{
-		std::vector<std::shared_ptr<Body>> bodyList;
+		std::shared_ptr<Body> body1;
+		std::shared_ptr<Body> body2;
 	};
 
 	// Implementing Sweep and prune
 	// TODO : BVH implementation
-	class BroadPhaseCollision
+	class CollisionBP
 	{
 	public:
 
-		BroadPhaseCollision()
+		CollisionBP()
 		{
 
 		}
 
+		// function to chunk out BPCUs
 
 		std::shared_ptr<Scene> sceneBuffer;
 	};
