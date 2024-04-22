@@ -36,6 +36,8 @@ namespace Minator
 
 		virtual void addForce(force2D force, point2D poc) override;
 
+		virtual point2D furthestSupportPoint(const direction2D d) const override;
+
 		float radius;
 		point2D center;
 	};

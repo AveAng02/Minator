@@ -27,10 +27,10 @@ namespace Minator
 		std::shared_ptr<BroadPhase> broadPhaseCollider;
 		std::queue<BPCU> breadPhaseQueue;
 
-		std::shared_ptr<CollisionNP> narrowPhaseCollider;
+		std::shared_ptr<NarrowPhase> narrowPhaseCollider;
 		std::queue<NPCU> narrowPhaseQueue;
 
-		std::shared_ptr<CollisionR> collisionResolver;
+		std::shared_ptr<CollisionResolver> collisionResolver;
 
 	private:
 

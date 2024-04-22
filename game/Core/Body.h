@@ -35,6 +35,8 @@ namespace Minator
 
 		virtual void addForce(force2D force, point2D poc) = 0;
 
+		virtual point2D furthestSupportPoint(const direction2D d) const = 0;
+
 		// virtual void drawBody() const = 0;
 
 

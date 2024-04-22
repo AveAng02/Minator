@@ -48,13 +48,13 @@
     <ClInclude Include="Body\Triangle.h">
       <Filter>Header Files\Body</Filter>
     </ClInclude>
-    <ClInclude Include="Core\CollisionBP.h">
+    <ClInclude Include="Core\BroadPhase.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\CollisionNP.h">
+    <ClInclude Include="Core\NarrowPhase.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\CollisionR.h">
+    <ClInclude Include="Core\CollisionResolver.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,13 +86,13 @@
     <ClCompile Include="Body\Triangle.cpp">
       <Filter>Source Files\Body</Filter>
     </ClCompile>
-    <ClCompile Include="Core\CollisionBP.cpp">
+    <ClCompile Include="Core\BroadPhase.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Core\CollisionNP.cpp">
+    <ClCompile Include="Core\NarrowPhase.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Core\CollisionR.cpp">
+    <ClCompile Include="Core\CollisionResolver.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>

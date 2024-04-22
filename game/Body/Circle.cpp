@@ -21,4 +21,11 @@ namespace Minator
 		// TODO : account for point of contact and angular momentum
 		this->force += force;
 	}
+
+	point2D Circle::furthestSupportPoint(const direction2D d) const
+	{
+		point2D d_ = d;
+
+		return d_.normalize() * radius + center;
+	}
 }

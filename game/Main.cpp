@@ -12,9 +12,9 @@
 #include "Body/Square.h"
 #include "Body/Triangle.h"
 #include "Core/Scene.h"
-#include "Core/CollisionBP.h"
-#include "Core/CollisionNP.h"
-#include "Core/CollisionR.h"
+#include "Core/BroadPhase.h"
+#include "Core/NarrowPhase.h"
+#include "Core/CollisionResolver.h"
 #include "Core/Minator.h"
 
 

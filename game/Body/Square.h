@@ -13,10 +13,11 @@ namespace Minator
 			float mass_ = 0.0f,
 			velocity2D vel = velocity2D(),
 			float sigma_ = 0.0f,
-			point2D tL = point2D(),
-			point2D bR = point2D())
-			: topLeft(tL),
-			bottomRight(bR)
+			point2D a_ = point2D(),
+			point2D b_ = point2D(),
+			point2D c_ = point2D(), 
+			point2D d_ = point2D())
+			: a(a_), b(b_), c(c_), d(d_)
 		{
 			bodyColor = bodyColor_;
 			mass = mass_;
@@ -26,7 +27,7 @@ namespace Minator
 			hasGravity = false;
 			hasInfiniteMass = false;
 
-			bbox = AABB(point3D(bR), point3D(tL));
+			bbox = AABB(point3D(a), point3D(c));
 		}
 
 		virtual void updatePosition(float time) override;
@@ -35,8 +36,9 @@ namespace Minator
 
 		virtual void addForce(force2D force, point2D poc) override;
 
-		point2D topLeft;
-		point2D bottomRight;
+		virtual point2D furthestSupportPoint(const direction2D d) const override;
+
+		point2D a, b, c, d;
 	};
 }
 

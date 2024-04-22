@@ -19,4 +19,14 @@ namespace Minator
 		// TODO : account for point of contact and angular momentum
 		this->force += force;
 	}
+
+	point2D Triangle::furthestSupportPoint(const direction2D d) const
+	{
+		float aVal = a.dot(d);
+		float bVal = a.dot(d);
+		float cVal = c.dot(d);
+
+		return (aVal > bVal) ? (aVal > cVal) ? a : c : (bVal > cVal) ? a : c;
+	}
+
 }

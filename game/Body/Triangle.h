@@ -29,11 +29,13 @@ namespace Minator
 			a += c;
 		}
 
-		void updatePosition(float time) override;
+		virtual void updatePosition(float time) override;
 
-		void addVelocity(velocity2D velocity, point2D poc) override;
+		virtual void addVelocity(velocity2D velocity, point2D poc) override;
 
-		void addForce(force2D force, point2D poc) override;
+		virtual void addForce(force2D force, point2D poc) override;
+
+		virtual point2D furthestSupportPoint(const direction2D d) const override;
 
 		point2D a, b, c;
 	};
