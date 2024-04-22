@@ -5,17 +5,11 @@
 
 namespace Minator
 {
-	void Scene::updateScene(float time)
-	{
-		// Use prior fram info to update
-
-		for (auto &body : bodyList)
-			body->updatePosition(time);
-	}
-
-	void Scene::addBody(const std::shared_ptr<Body> bodyPtr)
+	int Scene::addBody(const std::shared_ptr<Body> bodyPtr)
 	{
 		bodyList.push_back(bodyPtr);
+
+		return 0;
 	}
 
 	/*

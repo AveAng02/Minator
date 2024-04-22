@@ -3,9 +3,9 @@
 #include <queue>
 
 #include "Core/Scene.h"
-#include "Core/CollisionBP.h"
-#include "Core/CollisionNP.h"
-#include "Core/CollisionR.h"
+#include "Core/BroadPhase.h"
+#include "Core/NarrowPhase.h"
+#include "Core/CollisionResolver.h"
 
 namespace Minator
 {
@@ -15,15 +15,16 @@ namespace Minator
 
 		Minator()
 		{
-
+			scene = std::make_shared<Scene>();
 		}
 
 
+		int addBody(const std::shared_ptr<Body> bodyPtr);
 
 
-		std::shared_ptr<Scene> sceneBuffer;
+		std::shared_ptr<Scene> scene;
 
-		std::shared_ptr<CollisionBP> broadPhaseCollider;
+		std::shared_ptr<BroadPhase> broadPhaseCollider;
 		std::queue<BPCU> breadPhaseQueue;
 
 		std::shared_ptr<CollisionNP> narrowPhaseCollider;

@@ -272,6 +272,7 @@
     <ClInclude Include="Core\AABB.h" />
     <ClInclude Include="Core\CollisionBP.h" />
     <ClInclude Include="Core\CollisionNP.h" />
+    <ClInclude Include="Core\CollisionR.h" />
     <ClInclude Include="Core\Minator.h" />
     <ClInclude Include="Core\Scene.h" />
     <ClInclude Include="Core\Vector.h" />
@@ -284,6 +285,7 @@
     <ClCompile Include="Core\AABB.cpp" />
     <ClCompile Include="Core\CollisionBP.cpp" />
     <ClCompile Include="Core\CollisionNP.cpp" />
+    <ClCompile Include="Core\CollisionR.cpp" />
     <ClCompile Include="Core\Minator.cpp" />
     <ClCompile Include="Core\Scene.cpp" />
     <ClCompile Include="Core\Vector.cpp" />

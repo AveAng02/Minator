@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include "raylib.h"
-
 #include "Vector.h"
 
 namespace Minator
@@ -23,8 +21,6 @@ namespace Minator
 
 		// checks if the sent bounding box overlaps with this
 		bool overlaps(AABB sentBox);
-
-		void drawBox();
 
 	private:
 

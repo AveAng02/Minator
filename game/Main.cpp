@@ -12,6 +12,11 @@
 #include "Body/Square.h"
 #include "Body/Triangle.h"
 #include "Core/Scene.h"
+#include "Core/CollisionBP.h"
+#include "Core/CollisionNP.h"
+#include "Core/CollisionR.h"
+#include "Core/Minator.h"
+
 
 #define FPS 60
 
@@ -37,7 +42,7 @@ int main(void)
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist(0, 501);
 
-    Minator::Scene newScene(screenWidth, screenHeight);
+    Minator::Minator engine;
 
     /*
     * Scene with 1590 bodies set up 
@@ -64,19 +69,19 @@ int main(void)
             switch (c)
             {
             case 0:
-                bodyList.push_back(std::make_shared<Minator::Circle>(RED, 50.0f, velo, 50.0f, center, 15.0f));
+                bodyList.push_back(std::make_shared<Minator::Circle>(Minator::color4D(255, 0, 0, 255), 50.0f, velo, 50.0f, center, 15.0f));
                 break;
 
             case 1:
-                bodyList.push_back(std::make_shared<Minator::Square>(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(std::make_shared<Minator::Square>(Minator::color4D(0, 255, 0, 255), 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 2:
-                bodyList.push_back(std::make_shared<Minator::Triangle>(GREEN, 50.0f, velo, 50.0f, center, 0.5f));
+                bodyList.push_back(std::make_shared<Minator::Triangle>(Minator::color4D(0, 0, 255, 255), 50.0f, velo, 50.0f, center, 0.5f));
                 break;
 
             case 3:
-                bodyList.push_back(std::make_shared<Minator::Circle>(YELLOW, 50.0f, velo, 50.0f, center, 15.0f));
+                bodyList.push_back(std::make_shared<Minator::Circle>(Minator::color4D(255, 0, 255, 255), 50.0f, velo, 50.0f, center, 15.0f));
                 break;
 
             default:
@@ -92,7 +97,7 @@ int main(void)
         center.y = spaceQuantum;
     }
     
-    newScene.bodyList = bodyList;
+    engine.scene->bodyList = bodyList;
     
     //======================================================================//
 
@@ -112,8 +117,6 @@ int main(void)
 
     while (!WindowShouldClose())
     {
-        newScene.updateScene(timeQuantum);
-        
         BeginDrawing();
 
 

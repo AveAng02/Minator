@@ -16,11 +16,11 @@ namespace Minator
 
 	// Implementing Sweep and prune
 	// TODO : BVH implementation
-	class CollisionBP
+	class BroadPhase
 	{
 	public:
 
-		CollisionBP()
+		BroadPhase()
 		{
 
 		}

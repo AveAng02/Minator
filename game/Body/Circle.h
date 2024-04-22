@@ -9,7 +9,7 @@ namespace Minator
 	{
 	public:
 
-		Circle(Color bodyColor_ = MAROON,
+		Circle(color4D bodyColor_ = color4D(190, 33, 55, 255),
 			float mass_ = 0.0f,
 			velocity2D vel = velocity2D(),
 			float sigma_ = 0.0f,
@@ -22,7 +22,6 @@ namespace Minator
 			mass = mass_;
 			velocity = vel;
 			sigma = sigma_;
-			flag = 0;
 			hasCollided = false;
 			hasGravity = false;
 			hasInfiniteMass = false;

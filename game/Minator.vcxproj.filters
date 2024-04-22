@@ -54,6 +54,9 @@
     <ClInclude Include="Core\CollisionNP.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\CollisionR.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Body.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\CollisionNP.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CollisionR.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>

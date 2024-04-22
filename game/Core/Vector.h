@@ -63,12 +63,14 @@ namespace Minator
 		{
 			x *= value;
 			y *= value;
+			return *this;
 		}
 
 		vector2D& operator/=(float value)
 		{
 			x /= value;
 			y /= value;
+			return *this;
 		}
 
 		float x, y;
@@ -125,6 +127,7 @@ namespace Minator
 			x -= vec.x;
 			y -= vec.y;
 			z -= vec.z;
+			return *this;
 		}
 
 		vector3D& operator*(float value)
@@ -142,6 +145,7 @@ namespace Minator
 			x *= value;
 			y *= value;
 			z *= value;
+			return *this;
 		}
 
 		vector3D& operator/=(float value)
@@ -149,6 +153,7 @@ namespace Minator
 			x /= value;
 			y /= value;
 			z /= value;
+			return *this;
 		}
 
 
@@ -160,5 +165,94 @@ namespace Minator
 	};
 
 	typedef vector3D point3D;
+	typedef vector3D direction3D;
 	typedef vector3D velocity3D;
+	typedef vector3D force3D;
+	typedef vector3D impulse3D;
+
+
+	class vector4D
+	{
+	public:
+
+		vector4D(float x_ = 0.0f,
+				float y_ = 0.0f,
+				float z_ = 0.0f,
+				float a_ = 0.0f)
+			: x(x_), y(y_), z(z_), a(a_)
+		{}
+
+		vector4D(point2D point)
+			: x(point.x), y(point.y), z(0.0f), a(255.0f)
+		{}
+
+		vector4D(point3D point)
+			: x(point.x), y(point.y), z(point.z), a(255.0f)
+		{}
+
+		// float dot(const vector4D vec) const;
+		// vector4D cross(const vector4D vec) const;
+		// float mag() const;
+		// float magSquared() const;
+		// vector4D normalize();
+
+		vector4D& operator=(const vector4D& vec)
+		{
+			x = vec.x;
+			y = vec.y;
+			z = vec.z;
+			a = vec.a;
+			return *this;
+		}
+
+		vector4D& operator+=(const vector4D& vec)
+		{
+			x += vec.x;
+			y += vec.y;
+			z += vec.z;
+			a += vec.a;
+			return *this;
+		}
+
+		vector4D& operator-=(const vector4D& vec)
+		{
+			x -= vec.x;
+			y -= vec.y;
+			z -= vec.z;
+			a -= vec.z;
+			return *this;
+		}
+
+		vector4D& operator*(float value)
+		{
+			return vector4D(x * value, y * value, z * value);
+		}
+
+		vector4D& operator/(float value)
+		{
+			return vector4D(x / value, y / value, z / value);
+		}
+
+		vector4D& operator*=(float value)
+		{
+			x *= value;
+			y *= value;
+			z *= value;
+		}
+
+		vector4D& operator/=(float value)
+		{
+			x /= value;
+			y /= value;
+			z /= value;
+		}
+
+		float x, y, z, a;
+
+	private:
+
+	};
+
+	typedef vector4D point4D;
+	typedef vector4D color4D;
 }

@@ -1,8 +1,6 @@
 
 #include <iostream>
 
-#include "raylib.h"
-
 #include "Core/AABB.h"
 
 
@@ -20,21 +18,6 @@ namespace Minator
 			std::cout << "Overlaps" << std::endl;
 
 		return retValX && retValY;
-	}
-
-	void AABB::drawBox()
-	{
-		BoundingBox box;
-
-		box.min.x = min.x;
-		box.min.y = min.y;
-		box.min.z = 0.0f;
-
-		box.max.x = max.x;
-		box.max.y = max.y;
-		box.max.z = 0.0f;
-
-		DrawBoundingBox(box, RED);
 	}
 }
 

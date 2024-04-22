@@ -3,8 +3,6 @@
 #include <vector>
 #include <string>
 
-#include "raylib.h"
-
 #include "Core/AABB.h"
 #include "Core/Vector.h"
 
@@ -15,7 +13,7 @@ namespace Minator
 	{
 	public:
 
-		Body(Color bodyColor_ = MAROON,
+		Body(color4D bodyColor_ = color4D(190, 33, 55, 255),
 			float mass_ = 0.0f,
 			velocity2D vel = velocity2D(),
 			float sigma_ = 0.0f)
@@ -23,7 +21,6 @@ namespace Minator
 			mass(mass_),
 			velocity(vel),
 			sigma(sigma_),
-			flag(0),
 			hasCollided(false),
 			hasInfiniteMass(false),
 			hasGravity(false)
@@ -41,12 +38,12 @@ namespace Minator
 		// virtual void drawBody() const = 0;
 
 
-		// TODO : define a class named velocity
+		// TODO : define a class for units
 		// Defined in meters per second
 		// converted to pixels per frame
 		std::string bodyName;
 
-		Color bodyColor;
+		color4D bodyColor;
 
 		velocity2D velocity;
 		force2D force;
@@ -57,13 +54,6 @@ namespace Minator
 		mutable bool hasCollided;
 		bool hasGravity;
 		bool hasInfiniteMass;
-
-		/*
-		* -1 for change in x axis
-		* -2 for change in y axis
-		* -3 collision with another ball
-		*/
-		int flag; 
 
 		AABB bbox;
 	};
