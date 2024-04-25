@@ -19,13 +19,15 @@ namespace Minator
 		}
 
 
-		int addBody(const std::shared_ptr<Body> bodyPtr);
+		int addBody(const std::shared_ptr<Body> bodyPtr) const;
+
+		int runTests();
 
 
 		std::shared_ptr<Scene> scene;
 
 		std::shared_ptr<BroadPhase> broadPhaseCollider;
-		std::queue<BPCU> breadPhaseQueue;
+		std::queue<BPCU> broadPhaseQueue;
 
 		std::shared_ptr<NarrowPhase> narrowPhaseCollider;
 		std::queue<NPCU> narrowPhaseQueue;

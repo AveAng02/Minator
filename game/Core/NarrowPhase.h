@@ -23,6 +23,7 @@ namespace Minator
 		}
 
 		// functions to chunk out NPCUs
+		bool satAlgorithm(const BPCU unit) const;
 
 		std::shared_ptr<BPCU> sceneBuffer;
 	};
